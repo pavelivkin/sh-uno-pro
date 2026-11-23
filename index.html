@@ -58,6 +58,15 @@ body{background:radial-gradient(ellipse at 95% 4%,#f3dfef,transparent 43%),radia
 .overlay .dialog{max-height:none;overflow:visible;zoom:var(--dialog-scale,1);width:min(660px,calc(100vw - 40px))}
 }
 </style>
+<!-- VK Mini Apps -->
+<script src="https://unpkg.com/@vkontakte/vk-bridge@2.15.11/dist/browser.min.js"></script>
+<script>
+  if (window.vkBridge) {
+    window.vkBridge.send('VKWebAppInit').catch(function (error) {
+      console.warn('VK Bridge init skipped outside VK:', error);
+    });
+  }
+</script>
 </head>
 <body>
 <div class="app">
